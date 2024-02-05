@@ -66,6 +66,7 @@ from .utils import cas2csv, cas2json
 
 def read_cas_pdf(
     file: UploadFile,
+    pan: str,
     password: str,
     output="dict",
     sort_transactions=True,
@@ -111,6 +112,7 @@ def read_cas_pdf(
                     folio.schemes[idx] = scheme
 
         final_data = CASData(
+            pan=pan,
             statement_period=processed_data.statement_period,
             folios=processed_data.folios,
             investor_info=partial_cas_data.investor_info,

@@ -75,7 +75,7 @@ class Folio(BaseModel):
 
 class CASData(BaseModel):
     """CAS Parser return data type."""
-
+    pan:str
     statement_period: StatementPeriod
     folios: List[Folio]
     investor_info: InvestorInfo
@@ -99,3 +99,4 @@ class ProcessedCASData(BaseModel):
     cas_type: CASFileType
     folios: List[Folio]
     statement_period: StatementPeriod
+
